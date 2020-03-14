@@ -1,3 +1,6 @@
+
+//Start database --> /users/talib/mongodb/bin/mongod.exe --dbpath=/users/talib/mongodb-data
+
 //CRUD create update delete and update
 
 // const mongodb = require('mongodb')
@@ -81,8 +84,50 @@ MongoClient.connect(connectionURL,{useUnifiedTopology: true, useNewUrlParser:tru
     //     console.log(task)
     // })
 
-    db.collection('tasks').find({completed:false}).toArray((error,tasks)=>{
-        console.log(tasks)
-    })
+    // db.collection('tasks').find({completed:false}).toArray((error,tasks)=>{
+    //     console.log(tasks)
+    // })
     
+//UPDATE
+
+    // db.collection('users').updateOne({
+    //     _id:new ObjectID('5e6a7e897fa9c321f0aaba83')
+    // },{
+    //     $inc:{
+    //         age:1
+    //     }
+    // }).then((result)=>{
+    //     console.log(result)
+    // }).catch(error=>{
+    //     console.log(error)
+    // })
+
+    // db.collection('tasks').updateMany({
+    //     completed: false
+    // },{
+    //     $set:{
+    //         completed: true
+    //     }
+    // }).then((result)=>{
+    //     console.log(result.modifiedCount)
+    // }).catch(error=>{
+    //     console.log(error)
+    // })
+
+//DELETE
+    // db.collection('users').deleteMany({
+    //     age:27
+    // }).then((result)=>{
+    //     console.log(result)
+    // }).catch((error)=>{
+    //     console.log(error)
+    // })
+
+    db.collection('tasks').deleteOne({
+        description:'Clean the house'
+    }).then((result)=>{
+        console.log(result)
+    }).catch((error)=>{
+        console.log(error)
+    })
 })
