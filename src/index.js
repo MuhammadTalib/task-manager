@@ -126,9 +126,13 @@ app.post('/tasks',async(req,res)=>{
 
 app.patch('/users/:id',async(req,res)=>{
     try{
-       const user = await User.findByIdAndUpdate(req.param.id) 
+        const user = await User.findByIdAndUpdate(req.param.id, req.body, {new:true, runValidators: true}) 
+        if(!user){
+           return res.status(404).send(e)
+        }
+        res.send(user)
     }catch(e){
-
+        res.status(500).send()
     }
 })
 
