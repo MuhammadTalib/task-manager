@@ -179,7 +179,8 @@ router.get('/users/:id/avatar', async (req,res)=>{
 
     }catch(e){
         res.status(404).send()
-    }
+    }                     
 })
+//"saaa"
 
 module.exports = router
