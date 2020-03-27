@@ -26,9 +26,7 @@ MongoClient.connect(connectionURL,{useUnifiedTopology: true, useNewUrlParser:tru
     //     age:22
     // },(error,result)=>{
     //     if(error){
-    //         return console.log('Unable to insert user!')
     //     }
-    //     console.log(result.ops)
     // }) 
 
     // db.collection('users').insertMany([
@@ -43,7 +41,6 @@ MongoClient.connect(connectionURL,{useUnifiedTopology: true, useNewUrlParser:tru
     //     if(error){
     //         return console.log('Unable to insert users!')
     //     }
-    //     console.log(result.ops)
     // })
 
     // db.collection('tasks').insertMany([
